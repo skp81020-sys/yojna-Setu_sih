@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b5f55" />
+  <meta name="description" content="YojanaSetu AI - explainable scheme matching and channel-partner routing for marginalized entrepreneurs." />
+  <title>YojanaSetu AI — Smart Scheme Matching</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar" id="top">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="YojanaSetu AI home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img">
+            <path d="M9 24c0-8.3 6.7-15 15-15h4v8h-4a7 7 0 0 0 0 14h4v8h-4C15.7 39 9 32.3 9 24Z" fill="currentColor" opacity=".95"/>
+            <path d="M39 24c0 8.3-6.7 15-15 15h-4v-8h4a7 7 0 1 0 0-14h-4V9h4c8.3 0 15 6.7 15 15Z" fill="currentColor" opacity=".55"/>
+            <path d="M18 20h12v8H18z" fill="#fff"/>
+          </svg>
+        </span>
+        <span>
+          <strong>YojanaSetu</strong>
+          <small>AI</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#how">How it works</a>
+        <a href="#schemes">Schemes</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#partners">Partners</a>
+        <a href="#applications">Applications</a>
+      </nav>
+
+      <div class="nav-actions">
+        <span class="ai-nav-badge" id="aiStatusBadge" title="Ask Setu AI connection status"><i></i><span>AI demo</span></span>
+        <button class="icon-button" id="languageToggle" type="button" title="Switch language" aria-label="Switch language">
+          <span class="lang-code">हिं</span>
+        </button>
+        <button class="ghost-button admin-open" type="button">Admin demo</button>
+        <button class="primary-button compact finder-open" type="button">Find my scheme</button>
+        <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <a href="#how">How it works</a>
+      <a href="#schemes">Schemes</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#partners">Partners</a>
+      <a href="#applications">Applications</a>
+      <button class="ghost-button admin-open" type="button">Admin demo</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-space">
+      <div class="hero-grid shell">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="live-dot"></span> SIH 2026 · Problem Statement 26092</div>
+          <h1>From confusion to the <span class="gradient-text">right financial scheme</span> in minutes.</h1>
+          <p class="hero-subtitle">
+            An explainable, multilingual platform that checks eligibility, ranks suitable NSFDC credit schemes,
+            estimates repayment, and routes applicants to an eligible channel partner.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-button finder-open" type="button">
+              Check eligibility
+              <span aria-hidden="true">→</span>
+            </button>
+            <button class="soft-button" id="demoButton" type="button">
+              <span class="play-icon" aria-hidden="true">▶</span> Run 90-sec demo
+            </button>
+          </div>
+          <div class="trust-row" aria-label="Highlights">
+            <div><b>Rules first</b><span>No LLM guesses for eligibility</span></div>
+            <div><b>Explainable</b><span>See why a scheme fits</span></div>
+            <div><b>Last-mile</b><span>Route to the right partner</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1" aria-label="Sample recommendation preview">
+          <div class="hero-orbit orbit-a"></div>
+          <div class="hero-orbit orbit-b"></div>
+          <div class="phone-card">
+            <div class="phone-top">
+              <div>
+                <span class="micro-label">YOUR BEST MATCH</span>
+                <h3>Micro Finance Scheme</h3>
+              </div>
+              <span class="score-pill">94% fit</span>
+            </div>
+            <div class="match-meter"><span style="width:94%"></span></div>
+            <div class="money-grid">
+              <div><span>Project</span><strong>₹1.20L</strong></div>
+              <div><span>Loan fit</span><strong>₹1.08L</strong></div>
+              <div><span>Rate</span><strong>6.5%</strong></div>
+            </div>
+            <div class="why-card">
+              <div class="check-badge">✓</div>
+              <div>
+                <b>Why this fits</b>
+                <p>Income and project cost are within the scheme limits, with lower borrowing cost for a small project.</p>
+              </div>
+            </div>
+            <div class="route-preview">
+              <div class="route-map" aria-hidden="true">
+                <span class="map-road r1"></span><span class="map-road r2"></span><span class="map-road r3"></span>
+                <span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span>
+                <span class="route-line"></span>
+              </div>
+              <div class="route-label">
+                <span>Nearest eligible partner</span>
+                <strong>2.1 km away</strong>
+                <small>Accepting applications · Demo data</small>
+              </div>
+            </div>
+          </div>
+          <div class="floating-stat stat-one"><span>✓</span><b>Eligibility verified</b></div>
+          <div class="floating-stat stat-two"><span>₹</span><b>EMI optimized</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-strip">
+      <div class="shell signal-grid">
+        <div><strong>₹5 lakh</strong><span>current annual family income ceiling*</span></div>
+        <div><strong>Up to 90%</strong><span>financing of eligible project/course cost*</span></div>
+        <div><strong>5 scheme paths</strong><span>represented in this prototype</span></div>
+        <div><strong>1 journey</strong><span>match → plan → route → track</span></div>
+      </div>
+      <p class="source-note">*Prototype rules are based on current NSFDC public guidance and remain admin-configurable.</p>
+    </section>
+
+    <section class="section-space soft-section" id="how">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div class="eyebrow">A simpler citizen journey</div>
+          <h2>One guided flow. No scheme hunting.</h2>
+          <p>YojanaSetu separates deterministic eligibility from AI explanations, so users get both reliable decisions and understandable guidance.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <div class="step-num">01</div>
+            <div class="step-icon user-icon" aria-hidden="true">◎</div>
+            <h3>Tell us your need</h3>
+            <p>Income, purpose, project/course cost and location — only the information needed to match.</p>
+          </article>
+          <article class="step-card reveal delay-1">
+            <div class="step-num">02</div>
+            <div class="step-icon rules-icon" aria-hidden="true">≋</div>
+            <h3>Verify + rank</h3>
+            <p>Official-rule checks establish eligibility, then a transparent scoring model ranks suitable choices.</p>
+          </article>
+          <article class="step-card reveal delay-2">
+            <div class="step-num">03</div>
+            <div class="step-icon calc-icon" aria-hidden="true">₹</div>
+            <h3>Plan repayment</h3>
+            <p>See loan amount, contribution, moratorium, indicative EMI and total repayment before applying.</p>
+          </article>
+          <article class="step-card reveal delay-3">
+            <div class="step-num">04</div>
+            <div class="step-icon route-icon" aria-hidden="true">⌖</div>
+            <h3>Route + track</h3>
+            <p>Choose a nearby eligible partner, prepare an application pack and track status in one place.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" id="schemes">
+      <div class="shell">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <div class="eyebrow">Scheme intelligence</div>
+            <h2>Rules you can inspect, not a black box.</h2>
+          </div>
+          <button class="text-button finder-open" type="button">Match me to a scheme <span>→</span></button>
+        </div>
+        <div class="scheme-tabs" id="schemeTabs" role="tablist" aria-label="Scheme categories"></div>
+        <div class="scheme-showcase" id="schemeShowcase"></div>
+      </div>
+    </section>
+
+    <section class="section-space calculator-section" id="calculator">
+      <div class="shell calc-layout">
+        <div class="calc-copy reveal">
+          <div class="eyebrow light">Financial planner</div>
+          <h2>Understand the loan before you commit.</h2>
+          <p>Change the amount and tenure to see the estimated repayment instantly. The calculator uses scheme-specific rates and supports moratorium-aware planning.</p>
+          <div class="calc-highlights">
+            <div><span>01</span><p><b>Applicant contribution</b><br/>Shown separately from financing.</p></div>
+            <div><span>02</span><p><b>Moratorium visibility</b><br/>Not hidden inside fine print.</p></div>
+            <div><span>03</span><p><b>Affordability indicator</b><br/>Compared with declared household income.</p></div>
+          </div>
+        </div>
+        <div class="calculator-card reveal delay-1">
+          <div class="field-group">
+            <label for="calcScheme">Scheme</label>
+            <select id="calcScheme"></select>
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label for="calcAmount">Loan amount</label>
+              <div class="money-input"><span>₹</span><input id="calcAmount" type="number" min="1000" step="1000" value="108000" /></div>
+            </div>
+            <div class="field-group">
+              <label for="calcIncome">Monthly household income</label>
+              <div class="money-input"><span>₹</span><input id="calcIncome" type="number" min="0" step="500" value="28000" /></div>
+            </div>
+          </div>
+          <div class="field-group range-field">
+            <div class="range-label"><label for="calcTenure">Repayment tenure</label><strong id="tenureLabel">36 months</strong></div>
+            <input id="calcTenure" type="range" min="6" max="84" step="6" value="36" />
+            <div class="range-scale"><span>6 mo</span><span id="maxTenureLabel">84 mo</span></div>
+          </div>
+          <div class="calc-result-panel">
+            <div class="emi-main"><span>Estimated EMI</span><strong id="emiValue">₹3,310</strong><small>Indicative monthly equivalent</small></div>
+            <div class="donut-wrap">
+              <div class="donut" id="affordabilityDonut"><span id="affordabilityPct">12%</span></div>
+              <small>income share</small>
+            </div>
+          </div>
+          <div class="calc-breakdown">
+            <div><span>Interest rate</span><b id="rateValue">6.5% p.a.</b></div>
+            <div><span>Moratorium</span><b id="moratoriumValue">3 months</b></div>
+            <div><span>Total interest</span><b id="interestValue">₹11,160</b></div>
+            <div><span>Total repayment</span><b id="repaymentValue">₹1,19,160</b></div>
+          </div>
+          <p class="tiny-note">Prototype estimate. Actual repayment schedule is determined by the sanctioning channel partner.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" id="partners">
+      <div class="shell">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <div class="eyebrow">Last-mile routing</div>
+            <h2>Find a partner that can actually process your path.</h2>
+            <p>Distance alone is not enough. The router also checks supported schemes, application status and a prototype fund/portfolio eligibility flag.</p>
+          </div>
+          <button class="soft-button" id="useLocationButton" type="button">⌖ Use my location</button>
+        </div>
+
+        <div class="partner-layout reveal">
+          <div class="map-panel" id="mapPanel">
+            <div class="map-grid" aria-hidden="true"></div>
+            <svg class="map-roads" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M-60,500 C140,350 220,400 390,260 C545,132 685,280 1060,75" />
+              <path d="M80,-20 C210,125 280,180 370,570" />
+              <path d="M620,-30 C530,160 720,320 950,590" />
+              <path d="M-40,180 C230,155 440,95 1040,220" />
+            </svg>
+            <div class="map-badge">Prototype partner directory</div>
+            <div id="mapPins" class="map-pins"></div>
+            <div class="map-user" id="mapUser" title="Selected location"><span></span></div>
+          </div>
+          <aside class="partner-sidebar">
+            <div class="partner-controls">
+              <div class="field-group">
+                <label for="locationSelect">Your location</label>
+                <select id="locationSelect"></select>
+              </div>
+              <div class="field-group">
+                <label for="partnerScheme">Scheme path</label>
+                <select id="partnerScheme"></select>
+              </div>
+            </div>
+            <div class="partner-list" id="partnerList"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space app-section" id="applications">
+      <div class="shell app-grid">
+        <div class="app-copy reveal">
+          <div class="eyebrow">Application readiness</div>
+          <h2>Turn a recommendation into an application-ready handoff.</h2>
+          <p>YojanaSetu keeps the citizen focused on what is missing, packages the recommendation context, and preserves a simple status trail.</p>
+          <button class="primary-button finder-open" type="button">Start my application <span>→</span></button>
+        </div>
+        <div class="readiness-card reveal delay-1">
+          <div class="readiness-top">
+            <div>
+              <span class="micro-label">SAMPLE READINESS</span>
+              <h3>Almost ready to submit</h3>
+            </div>
+            <div class="readiness-score"><strong>82</strong><span>/100</span></div>
+          </div>
+          <div class="readiness-bar"><span style="width:82%"></span></div>
+          <div class="checklist">
+            <div class="done"><span>✓</span><p><b>Eligibility</b><small>Profile satisfies base criteria</small></p><em>100%</em></div>
+            <div class="done"><span>✓</span><p><b>Financial details</b><small>Project and requested amount added</small></p><em>100%</em></div>
+            <div class="pending"><span>!</span><p><b>Documents</b><small>Bank details and estimate pending</small></p><em>65%</em></div>
+            <div class="done"><span>✓</span><p><b>Channel partner</b><small>Eligible partner selected</small></p><em>100%</em></div>
+          </div>
+        </div>
+        <div class="tracking-card reveal delay-2">
+          <div class="tracking-head">
+            <div><span class="micro-label">APPLICATION</span><h3 id="sampleAppId">YS26-DEMO-1042</h3></div>
+            <span class="status-pill blue">Under review</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item done"><span></span><div><b>Application submitted</b><small>Profile + scheme pack generated</small></div></div>
+            <div class="timeline-item active"><span></span><div><b>Partner review</b><small>Document verification in progress</small></div></div>
+            <div class="timeline-item"><span></span><div><b>Credit decision</b><small>Waiting for partner action</small></div></div>
+            <div class="timeline-item"><span></span><div><b>Disbursement</b><small>After sanction and formalities</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space impact-section">
+      <div class="shell">
+        <div class="impact-card reveal">
+          <div>
+            <div class="eyebrow light">Why YojanaSetu</div>
+            <h2>Not another scheme directory.</h2>
+            <p>Discovery is only useful when it ends in a clear, affordable and correctly routed next step.</p>
+          </div>
+          <div class="impact-points">
+            <div><strong>01</strong><span><b>Decision transparency</b>Every yes/no condition remains visible.</span></div>
+            <div><strong>02</strong><span><b>Financial clarity</b>Applicants see contribution and repayment before routing.</span></div>
+            <div><strong>03</strong><span><b>Partner fit</b>Applications are not blindly sent to the closest institution.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M9 24c0-8.3 6.7-15 15-15h4v8h-4a7 7 0 0 0 0 14h4v8h-4C15.7 39 9 32.3 9 24Z" fill="currentColor"/><path d="M39 24c0 8.3-6.7 15-15 15h-4v-8h4a7 7 0 1 0 0-14h-4V9h4c8.3 0 15 6.7 15 15Z" fill="currentColor" opacity=".55"/><path d="M18 20h12v8H18z" fill="#fff"/></svg></span>
+          <span><strong>YojanaSetu</strong><small>AI</small></span>
+        </a>
+        <p>AI-driven scheme matching and channel-partner routing.</p>
+      </div>
+      <div><b>Prototype</b><a href="#schemes">Scheme engine</a><a href="#calculator">EMI planner</a><a href="#partners">Partner router</a></div>
+      <div><b>Demo tools</b><button class="link-button finder-open">Eligibility flow</button><button class="link-button admin-open">Admin dashboard</button><button class="link-button" id="resetDemo">Reset local data</button></div>
+      <div><b>Important</b><p class="footer-note">This hackathon prototype does not sanction loans. Final eligibility, rates, documents and approval remain subject to official NSFDC/channel-partner rules.</p></div>
+    </div>
+    <div class="shell footer-bottom"><span>Team QBit · YojanaSetu AI</span><span>Built for Smart India Hackathon 2026</span></div>
+  </footer>
+
+  <!-- Eligibility wizard -->
+  <div class="modal-backdrop" id="finderModal" aria-hidden="true">
+    <div class="modal finder-modal" role="dialog" aria-modal="true" aria-labelledby="finderTitle">
+      <button class="modal-close" data-close="finderModal" type="button" aria-label="Close">×</button>
+      <div class="wizard-sidebar">
+        <a class="brand wizard-brand" href="#">
+          <span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M9 24c0-8.3 6.7-15 15-15h4v8h-4a7 7 0 0 0 0 14h4v8h-4C15.7 39 9 32.3 9 24Z" fill="currentColor"/><path d="M39 24c0 8.3-6.7 15-15 15h-4v-8h4a7 7 0 1 0 0-14h-4V9h4c8.3 0 15 6.7 15 15Z" fill="currentColor" opacity=".55"/><path d="M18 20h12v8H18z" fill="#fff"/></svg></span>
+          <span><strong>YojanaSetu</strong><small>AI</small></span>
+        </a>
+        <div class="wizard-progress" id="wizardProgress"></div>
+        <div class="privacy-note"><span>🔒</span><p><b>Privacy by design</b><small>This demo stores application data only in your browser.</small></p></div>
+      </div>
+      <div class="wizard-main">
+        <div class="wizard-mobile-progress"><span id="mobileStepLabel">Step 1 of 4</span><div><i id="mobileStepBar"></i></div></div>
+        <div id="wizardContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results modal -->
+  <div class="modal-backdrop" id="resultsModal" aria-hidden="true">
+    <div class="modal results-modal" role="dialog" aria-modal="true" aria-labelledby="resultsTitle">
+      <button class="modal-close dark-close" data-close="resultsModal" type="button" aria-label="Close">×</button>
+      <div id="resultsContent"></div>
+    </div>
+  </div>
+
+  <!-- Application modal -->
+  <div class="modal-backdrop" id="applicationModal" aria-hidden="true">
+    <div class="modal application-modal" role="dialog" aria-modal="true" aria-labelledby="applicationTitle">
+      <button class="modal-close dark-close" data-close="applicationModal" type="button" aria-label="Close">×</button>
+      <div id="applicationContent"></div>
+    </div>
+  </div>
+
+  <!-- Admin dashboard -->
+  <div class="modal-backdrop admin-backdrop" id="adminModal" aria-hidden="true">
+    <div class="modal admin-modal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+      <button class="modal-close dark-close" data-close="adminModal" type="button" aria-label="Close">×</button>
+      <div class="admin-shell">
+        <aside class="admin-nav">
+          <a class="brand admin-brand" href="#">
+            <span class="brand-mark"><svg viewBox="0 0 48 48"><path d="M9 24c0-8.3 6.7-15 15-15h4v8h-4a7 7 0 0 0 0 14h4v8h-4C15.7 39 9 32.3 9 24Z" fill="currentColor"/><path d="M39 24c0 8.3-6.7 15-15 15h-4v-8h4a7 7 0 1 0 0-14h-4V9h4c8.3 0 15 6.7 15 15Z" fill="currentColor" opacity=".55"/><path d="M18 20h12v8H18z" fill="#fff"/></svg></span>
+            <span><strong>YojanaSetu</strong><small>Admin</small></span>
+          </a>
+          <div class="admin-user"><div class="avatar">QB</div><div><b>QBit Demo Admin</b><small>Prototype workspace</small></div></div>
+          <nav id="adminNav">
+            <button class="active" data-admin-view="overview">Overview</button>
+            <button data-admin-view="applications">Applications</button>
+            <button data-admin-view="schemes">Scheme rules</button>
+            <button data-admin-view="partners">Partners</button>
+          </nav>
+          <div class="admin-disclaimer">Demo controls update browser-local prototype data only.</div>
+        </aside>
+        <main class="admin-content" id="adminContent"></main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ask Setu AI -->
+  <button class="assistant-fab" id="assistantFab" aria-label="Open Ask Setu AI assistant" type="button">
+    <span class="assistant-spark">✦</span>
+    <span class="assistant-fab-copy"><b>Ask Setu</b><small>AI scheme guide</small></span>
+  </button>
+  <aside class="assistant-panel" id="assistantPanel" aria-label="Ask Setu AI assistant" aria-hidden="true">
+    <div class="assistant-head">
+      <div class="assistant-avatar">✦</div>
+      <div class="assistant-title">
+        <b>Ask Setu AI</b>
+        <small><span class="ai-status-dot" id="assistantStatusDot"></span><span id="assistantStatusText">Checking AI…</span></small>
+      </div>
+      <button id="assistantClose" type="button" aria-label="Close assistant">×</button>
+    </div>
+    <div class="assistant-context" id="assistantContext">
+      <span>Rules-safe AI</span>
+      <p>AI explains schemes and your recommendation. Eligibility itself always comes from YojanaSetu's deterministic rules engine.</p>
+    </div>
+    <div class="assistant-messages" id="assistantMessages">
+      <div class="chat-message bot">Namaste! Ask me about scheme eligibility, EMI, documents, moratorium, partner routing, or why a recommendation fits your profile.</div>
+    </div>
+    <div class="assistant-typing" id="assistantTyping" hidden><i></i><i></i><i></i><span>Setu is thinking…</span></div>
+    <div class="quick-prompts" id="quickPrompts">
+      <button type="button">Why is this my best match?</button>
+      <button type="button">Explain my EMI simply</button>
+      <button type="button">What documents do I need?</button>
+      <button type="button">What happens after I choose a partner?</button>
+    </div>
+    <form class="assistant-input" id="assistantForm">
+      <input id="assistantText" type="text" placeholder="Ask Setu anything about your scheme…" autocomplete="off" maxlength="800" />
+      <button type="submit" aria-label="Send message">→</button>
+    </form>
+    <div class="assistant-foot">AI guidance can simplify official rules, but does not sanction or approve a loan.</div>
+  </aside>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
